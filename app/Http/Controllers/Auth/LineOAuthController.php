@@ -11,7 +11,7 @@ class LineOAuthController extends Controller
     public function redirectToProvider()
     {
         Log::info('Socialite Info: ', ['driver' => Socialite::driver('line')]);
-        return Socialite::driver('line')->redirect();
+        return Socialite::driver('line')->with(['bot_prompt' => 'normal'])->redirect();
     }
 
     // LINEからユーザー情報を取得
