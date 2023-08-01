@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::view('/form', 'form');
+
+Route::get('/auth/line', [App\Http\Controllers\Auth\LineOAuthController::class, 'redirectToProvider'])->name('auth_line');
+
+Route::get('/auth/line/callback', [App\Http\Controllers\Auth\LineOAuthController::class, 'handleProviderCallback'])->name('auth_line_callback');
