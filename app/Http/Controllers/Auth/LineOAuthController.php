@@ -18,6 +18,6 @@ class LineOAuthController extends Controller
     public function handleProviderCallback()
     {
         $user = Socialite::driver('line')->user();
-        Log::info('User Info: ', ['user' => $user]);
+        dd($user);
     }
 }
