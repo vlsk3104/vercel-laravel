@@ -21,8 +21,15 @@
               <!-- text - start -->
               <div class="mb-10 md:mb-16">
                 <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">フォーム</h2>
-
-                <p class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">リダイレクト確認</p>
+                @if(! empty($user))
+                  <p class="max-w-screen-md text-gray-500 md:text-lg">
+                    リダイレクト確認 <br />
+                    LINE ID: {{ $user->id }} <br />
+                    LINE ユーザー名: {{ $user->name }} <br />
+                    LINE メールアドレス: {{ $user->email }} <br />
+                    <img src="{{ $user->avatar }}" width="100" height="100" alt="avatar">
+                  </p>
+                @endif
               </div>
               <!-- text - end -->
 

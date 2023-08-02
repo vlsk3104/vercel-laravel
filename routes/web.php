@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
-
-Route::view('/form', 'form');
+})->name('home');
 
 Route::get('/auth/line', [App\Http\Controllers\Auth\LineOAuthController::class, 'redirectToProvider'])->name('auth_line');
 
